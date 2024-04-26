@@ -29,7 +29,7 @@ const NavBar = () => {
   const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const user = {firstName: "Yash", lastName:"Arora"};
+  const user = useSelector((state)=>state.user);
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
 
   const theme = useTheme();
@@ -100,7 +100,7 @@ const NavBar = () => {
            <MenuItem value={fullName}>
              <Typography>{fullName}</Typography>
            </MenuItem>
-           <MenuItem onClick={dispatch(setLogout())}>
+           <MenuItem onClick={()=>dispatch(setLogout())}>
              <Typography>Log Out</Typography>
            </MenuItem>
           </Select>
@@ -165,7 +165,7 @@ const NavBar = () => {
               <MenuItem value={fullName}>
                 <Typography>{fullName}</Typography>
               </MenuItem>
-              <MenuItem onClick={dispatch(setLogout())}>
+              <MenuItem onClick={()=>dispatch(setLogout())}>
                 <Typography>Log Out</Typography>
               </MenuItem>
             </Select>
