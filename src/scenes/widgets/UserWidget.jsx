@@ -7,8 +7,6 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { EditOutlined, LocationOnOutlined, ManageAccountsOutlined, WorkOutlineOutlined } from "@mui/icons-material";
 
-
-
 const UserWidget = ({ userId, picturePath}) => {
     const [user, setUser] = useState(null);
     const { palette } = useTheme();
